@@ -4993,7 +4993,10 @@ void ejecucionClase(int numClase){
   }
 
 
-
+//funcion, devuelve si el horario actual esta en
+//un horario en que puede se activado (entre 8am a 21pm)
+//de ser asi, devuelve true.
+//si el horario no esta entre ese horario, retorna false.
 boolean diaBonito(){
   
   
