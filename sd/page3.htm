@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Utilidades Agregadas</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<style type="text/css">
+		*{
+			margin:0px;
+			padding:0px;
+			
+	
+		}
+		div#generalguemes{
+			background-color: #d66819;
+
+			margin: auto;
+
+            width:960px;
+            height:960px;
+		}
+		p#titulon{
+			text-align: center;
+			font-size: 35px;
+			background-color: #fc7a00;
+
+		}
+		div.block1{
+			text-align: center;
+			margin-left: 10px;
+			display: inline-block;
+		}
+		div#contenedor{
+
+			//border: 2px solid;
+		}
+		p.utilagregado{
+			font-size: 30px;
+			margin-top: 12px;
+
+		}
+		p#botonsonlugar{
+			font-size: 35px;
+			padding-top: 10px;
+			margin-top: 10px;
+			//border: 2px solid;
+			text-align: center;
+			display: none;
+		}
+		p#ocultismoBoton{
+			background-color: #ffaa00;
+			font-size: 35px;
+			padding-top: 10px;
+			margin-top: 10px;
+			//border: 2px solid;
+			text-align: center;
+
+		}
+		button.botonchiquito{
+
+			padding: 5px;
+			margin: 2px;
+		}
+		div#bizquierda{
+			//margin-left: 35px;
+			//border: 1px solid;
+			display: inline-block;
+
+
+		}
+		div#bderecha{
+			//margin-left: 60px;
+			//border: 1px solid;
+
+			display: inline-block;
+
+
+
+		}
+		button.botonapply{
+			padding: 15px;
+			font-size: 32px;
+		}
+
+
+	</style>
+	<script type="text/javascript">
+		
+
+			var b1 = 0; //en realidad obtiene de arduino primero, de la sd me refiero.
+			//llamar a funcion cambio colorVar
+			var b2 = 0;
+			var b3 = 0;
+			var b4 = 0;
+			var b5 = 0;
+			var b6 = 0;
+			var b7 = 0;
+			var b8 = 0;
+			var b9 = 0;
+			var b10 = 0;
+			var b11 = 0;
+			var b12 = 0;
+			var b13 = 0;
+			var b14 = 0;
+			var b15 = 0;
+			var b16 = 0;
+			var b17 = 0;
+			var b18 = 0;
+			var b19 = 0;
+			var b20 = 0;
+
+			function arduinoDesdeSD()
+        {
+            nocache = "&nocache=" + Math.random() * 1000000;
+            var request = new XMLHttpRequest();
+            
+            request.onreadystatechange = function()
+            {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        if (this.responseXML != null) {
+                            
+                            b1   = this.responseXML.getElementsByTagName('analog')[0].childNodes[0].nodeValue;
+                            cambioColorVar('b1',b1);
+                            b2   = this.responseXML.getElementsByTagName('analog')[1].childNodes[0].nodeValue;
+                            cambioColorVar('b2',b2);
+							b3   = this.responseXML.getElementsByTagName('analog')[2].childNodes[0].nodeValue;
+							cambioColorVar('b3',b3);
+							b4   = this.responseXML.getElementsByTagName('analog')[3].childNodes[0].nodeValue;
+							cambioColorVar('b4',b4);
+							b5   = this.responseXML.getElementsByTagName('analog')[4].childNodes[0].nodeValue;
+							cambioColorVar('b5',b5);
+							b6   = this.responseXML.getElementsByTagName('analog')[5].childNodes[0].nodeValue;
+							cambioColorVar('b6',b6);
+							b7   = this.responseXML.getElementsByTagName('analog')[6].childNodes[0].nodeValue;
+							cambioColorVar('b7',b7);
+							b8   = this.responseXML.getElementsByTagName('analog')[7].childNodes[0].nodeValue;
+							cambioColorVar('b8',b8);
+							b9   = this.responseXML.getElementsByTagName('analog')[8].childNodes[0].nodeValue;
+							cambioColorVar('b9',b9);
+							b10  = this.responseXML.getElementsByTagName('analog')[9].childNodes[0].nodeValue;
+							cambioColorVar('b10',b10);
+							b11  = this.responseXML.getElementsByTagName('analog')[10].childNodes[0].nodeValue;
+							cambioColorVar('b11',b11);
+							b12  = this.responseXML.getElementsByTagName('analog')[11].childNodes[0].nodeValue;
+							cambioColorVar('b12',b12);
+							b13  = this.responseXML.getElementsByTagName('analog')[12].childNodes[0].nodeValue;
+							cambioColorVar('b13',b13);
+							b14  = this.responseXML.getElementsByTagName('analog')[13].childNodes[0].nodeValue;
+							cambioColorVar('b14',b14);
+							b15  = this.responseXML.getElementsByTagName('analog')[14].childNodes[0].nodeValue;
+							cambioColorVar('b15',b15);
+							b16  = this.responseXML.getElementsByTagName('analog')[15].childNodes[0].nodeValue;
+							cambioColorVar('b16',b16);
+							b17  = this.responseXML.getElementsByTagName('analog')[16].childNodes[0].nodeValue;
+							cambioColorVar('b17',b17);
+							b18  = this.responseXML.getElementsByTagName('analog')[17].childNodes[0].nodeValue;
+							cambioColorVar('b18',b18);
+							b19  = this.responseXML.getElementsByTagName('analog')[18].childNodes[0].nodeValue;
+							cambioColorVar('b19',b19);
+							b20  = this.responseXML.getElementsByTagName('analog')[19].childNodes[0].nodeValue;
+							cambioColorVar('b20',b20);
+							aparecerBoton(2);
+                        }
+                    }
+                }
+            }
+            request.open("GET", "atrsdqseyo" + nocache, true);
+            request.send(null);
+            
+            
+        }
+
+
+
+			function cambioColorVar(boton,numero){
+				
+				switch(boton){
+					case 'b1': b1 = numero;
+								if(numero==1){
+
+									document.getElementById('boton1a').style.backgroundColor='#10ed31';
+									document.getElementById('boton1b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton1a').style.backgroundColor='white';
+									document.getElementById('boton1b').style.backgroundColor='#ff2119';
+								}
+
+					break;
+					case 'b2': b2 = numero;
+								if(numero==1){
+
+									document.getElementById('boton2a').style.backgroundColor='#10ed31';
+									document.getElementById('boton2b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton2a').style.backgroundColor='white';
+									document.getElementById('boton2b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b3': b3 = numero;
+								if(numero==1){
+
+									document.getElementById('boton3a').style.backgroundColor='#10ed31';
+									document.getElementById('boton3b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton3a').style.backgroundColor='white';
+									document.getElementById('boton3b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b4': b4 = numero;
+								if(numero==1){
+
+									document.getElementById('boton4a').style.backgroundColor='#10ed31';
+									document.getElementById('boton4b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton4a').style.backgroundColor='white';
+									document.getElementById('boton4b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b5': b5 = numero;
+								if(numero==1){
+
+									document.getElementById('boton5a').style.backgroundColor='#10ed31';
+									document.getElementById('boton5b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton5a').style.backgroundColor='white';
+									document.getElementById('boton5b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b6': b6 = numero;
+								if(numero==1){
+
+									document.getElementById('boton6a').style.backgroundColor='#10ed31';
+									document.getElementById('boton6b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton6a').style.backgroundColor='white';
+									document.getElementById('boton6b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b7': b7 = numero;
+								if(numero==1){
+
+									document.getElementById('boton7a').style.backgroundColor='#10ed31';
+									document.getElementById('boton7b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton7a').style.backgroundColor='white';
+									document.getElementById('boton7b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b8': b8 = numero;
+								if(numero==1){
+
+									document.getElementById('boton8a').style.backgroundColor='#10ed31';
+									document.getElementById('boton8b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton8a').style.backgroundColor='white';
+									document.getElementById('boton8b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b9': b9 = numero;
+								if(numero==1){
+
+									document.getElementById('boton9a').style.backgroundColor='#10ed31';
+									document.getElementById('boton9b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton9a').style.backgroundColor='white';
+									document.getElementById('boton9b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b10': b10 = numero;
+								if(numero==1){
+
+									document.getElementById('boton10a').style.backgroundColor='#10ed31';
+									document.getElementById('boton10b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton10a').style.backgroundColor='white';
+									document.getElementById('boton10b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b11': b11 = numero;
+								if(numero==1){
+
+									document.getElementById('boton11a').style.backgroundColor='#10ed31';
+									document.getElementById('boton11b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton11a').style.backgroundColor='white';
+									document.getElementById('boton11b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b12': b12 = numero;
+								if(numero==1){
+
+									document.getElementById('boton12a').style.backgroundColor='#10ed31';
+									document.getElementById('boton12b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton12a').style.backgroundColor='white';
+									document.getElementById('boton12b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b13': b13 = numero;
+								if(numero==1){
+
+									document.getElementById('boton13a').style.backgroundColor='#10ed31';
+									document.getElementById('boton13b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton13a').style.backgroundColor='white';
+									document.getElementById('boton13b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b14': b14 = numero;
+								if(numero==1){
+
+									document.getElementById('boton14a').style.backgroundColor='#10ed31';
+									document.getElementById('boton14b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton14a').style.backgroundColor='white';
+									document.getElementById('boton14b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b15': b15 = numero;
+								if(numero==1){
+
+									document.getElementById('boton15a').style.backgroundColor='#10ed31';
+									document.getElementById('boton15b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton15a').style.backgroundColor='white';
+									document.getElementById('boton15b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b16': b16 = numero;
+								if(numero==1){
+
+									document.getElementById('boton16a').style.backgroundColor='#10ed31';
+									document.getElementById('boton16b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton16a').style.backgroundColor='white';
+									document.getElementById('boton16b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b17': b17 = numero;
+								if(numero==1){
+
+									document.getElementById('boton17a').style.backgroundColor='#10ed31';
+									document.getElementById('boton17b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton17a').style.backgroundColor='white';
+									document.getElementById('boton17b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b18': b18 = numero;
+								if(numero==1){
+
+									document.getElementById('boton18a').style.backgroundColor='#10ed31';
+									document.getElementById('boton18b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton18a').style.backgroundColor='white';
+									document.getElementById('boton18b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b19': b19 = numero;
+								if(numero==1){
+
+									document.getElementById('boton19a').style.backgroundColor='#10ed31';
+									document.getElementById('boton19b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton19a').style.backgroundColor='white';
+									document.getElementById('boton19b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+					case 'b20': b20 = numero;
+								if(numero==1){
+
+									document.getElementById('boton20a').style.backgroundColor='#10ed31';
+									document.getElementById('boton20b').style.backgroundColor='white';
+								
+								}else{
+									document.getElementById('boton20a').style.backgroundColor='white';
+									document.getElementById('boton20b').style.backgroundColor='#ff2119';
+								}
+					break;
+
+
+
+
+
+					default:break;
+
+
+
+							
+					
+							
+
+
+				}
+
+
+			}
+
+			function mostrarVar(){
+				aparecerBoton(1);
+
+				var codigo = ("so"+b1+b2+b3+b4+b5+b6+b7+b8+b9+b10+b11+b12+b13+b14+b15+b16+b17+b18+b19+b20);
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            	
+          	    request.open("GET", "pala"+codigo+"f", true);
+            	request.send(null);
+            	
+            	setTimeout('aparecerBoton(2)', 7000);
+
+
+			}
+			function aparecerBoton(numerito){
+				switch(numerito){
+					case 1:
+							document.getElementById("botonsonlugar").style.display='none';
+			                document.getElementById("ocultismoBoton").style.display='block';
+							//desaparecio el boton; magia,
+							 break;
+					case 2: 
+							document.getElementById("botonsonlugar").style.display='block';
+			                document.getElementById("ocultismoBoton").style.display='none';
+							//aparecer
+							break;
+					default: break;
+
+
+
+				}
+				
+			}
+
+	</script>
+</head>
+<body onload="arduinoDesdeSD()"  bgcolor="#e5cf99" >
+	<div id="generalguemes">
+		<p id="titulon">"Funciones Agregadas"</p>
+		<div id="contenedor">
+			<center>
+			<div class="block1" id="bizquierda">
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton1a" onclick="cambioColorVar('b1',1)">ON</button>
+						<button class="botonchiquito" id="boton1b" onclick="cambioColorVar('b1',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton2a" onclick="cambioColorVar('b2',1)">ON</button>
+						<button class="botonchiquito" id="boton2b" onclick="cambioColorVar('b2',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton3a" onclick="cambioColorVar('b3',1)">ON</button>
+						<button class="botonchiquito" id="boton3b" onclick="cambioColorVar('b3',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton4a" onclick="cambioColorVar('b4',1)">ON</button>
+						<button class="botonchiquito" id="boton4b" onclick="cambioColorVar('b4',0)">OFF</button>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton5a" onclick="cambioColorVar('b5',1)">ON</button>
+						<button class="botonchiquito" id="boton5b" onclick="cambioColorVar('b5',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton6a" onclick="cambioColorVar('b6',1)">ON</button>
+						<button class="botonchiquito" id="boton6b" onclick="cambioColorVar('b6',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton7a" onclick="cambioColorVar('b7',1)">ON</button>
+						<button class="botonchiquito" id="boton7b" onclick="cambioColorVar('b7',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton8a" onclick="cambioColorVar('b8',1)">ON</button>
+						<button class="botonchiquito" id="boton8b" onclick="cambioColorVar('b8',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton9a" onclick="cambioColorVar('b9',1)">ON</button>
+						<button class="botonchiquito" id="boton9b" onclick="cambioColorVar('b9',0)">OFF</button>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton10a" onclick="cambioColorVar('b10',1)">ON</button>
+						<button class="botonchiquito" id="boton10b" onclick="cambioColorVar('b10',0)">OFF</button>
+				</p>
+			</div>
+			<div class="block1" id="bderecha">
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton11a" onclick="cambioColorVar('b11',1)">ON</button>
+						<button class="botonchiquito" id="boton11b" onclick="cambioColorVar('b11',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton12a" onclick="cambioColorVar('b12',1)">ON</button>
+						<button class="botonchiquito" id="boton12b" onclick="cambioColorVar('b12',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton13a" onclick="cambioColorVar('b13',1)">ON</button>
+						<button class="botonchiquito" id="boton13b" onclick="cambioColorVar('b13',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton14a" onclick="cambioColorVar('b14',1)">ON</button>
+						<button class="botonchiquito" id="boton14b" onclick="cambioColorVar('b14',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton15a" onclick="cambioColorVar('b15',1)">ON</button>
+						<button class="botonchiquito" id="boton15b" onclick="cambioColorVar('b15',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton16a" onclick="cambioColorVar('b16',1)">ON</button>
+						<button class="botonchiquito" id="boton16b" onclick="cambioColorVar('b16',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton17a" onclick="cambioColorVar('b17',1)">ON</button>
+						<button class="botonchiquito" id="boton17b" onclick="cambioColorVar('b17',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton18a" onclick="cambioColorVar('b18',1)">ON</button>
+						<button class="botonchiquito" id="boton18b" onclick="cambioColorVar('b18',0)">OFF</button>
+				</p>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton19a" onclick="cambioColorVar('b19',1)">ON</button>
+						<button class="botonchiquito" id="boton19b" onclick="cambioColorVar('b19',0)">OFF</button>
+				<p class="utilagregado">
+						Alguna cosa cualquiera
+						<button class="botonchiquito" id="boton20a" onclick="cambioColorVar('b20',1)">ON</button>
+						<button class="botonchiquito" id="boton20b" onclick="cambioColorVar('b20',0)">OFF</button>
+				</p>
+			</div>
+			</center>
+		</div>
+			<p id="botonsonlugar"> 
+
+					<button class="botonapply" onclick="mostrarVar()">Aplicar Cambios</button>
+			</p>
+			<p id="ocultismoBoton">
+				Actualizando Datos; Espere...
+			</p>
+		
+
+
+
+	</div>
+
+</body >
+</html>

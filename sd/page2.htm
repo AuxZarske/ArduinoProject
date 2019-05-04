@@ -1,0 +1,1359 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+		<meta charset="utf-8">
+        <title>Arduino SD Card Web Page 2</title>
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+		<link rel="icon" href="favicon.ico" type="image/x-icon">
+        <style type="text/css">
+
+
+
+        *{
+	margin:0px;
+	padding:0px;
+	
+	
+}
+
+div#general{
+	margin: auto;
+	
+	width:1120px;
+	//margin: 0px auto;
+	//height:1380px;
+	display: inline-block;
+	background-color: #49d891;
+	background: #49d891;
+	
+}
+div#Calendario{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+	//background: #64fcb0;
+	padding-top: 1px;
+	//display: inline-block;
+	//border: 1px solid;
+}
+div#primera{
+
+	font-size: 25px;
+}
+div#derechapm{
+	margin-left: 60px;
+	display: inline-block;
+}
+div#izquierdaam{
+	font-size: 33px;
+	margin-right: 30px;
+	display: inline-block;
+
+
+}
+div.Temp{
+	padding: 20px;
+	text-align: center;
+	border: 1px solid;
+	margin-top: 10px;
+	background-color: #6fe8c7;
+	height:100px;
+	font-size: 33px;
+	display: inline-block;
+
+}
+div#ocultoprincipal{
+	margin-top: 100px;
+	margin-bottom: 150px;
+	padding: 30px;
+	font-size: 50px;
+	border: 5px solid;
+	border-color: #ce2f16;
+	text-align: center;
+	background-color: #efe556;
+	display: inline-block;
+}
+
+div#ocultoconejo{
+
+
+	margin-top: 100px;
+	margin-bottom: 150px;
+	padding: 30px;
+	font-size: 50px;
+	border: 5px solid;
+	border-color: #ce2f16;
+	text-align: center;
+	background-color: #efe556;
+	display: none;
+
+
+}
+
+div#cargaprincipal{
+
+	display: none;
+
+}
+div.unoizq{
+	//border: 1px solid;
+	margin-left: 10px;
+	height: 30px;
+	width: 180px;
+	display: inline-block;
+}
+div.dosizq{
+	
+	//border: 1px solid;
+	height: 30px;
+	width: 180px;
+	display: inline-block;
+}
+span.botestados{
+
+	padding:2px; 
+	//border: 1px solid;
+}
+
+div.tresder{
+	//border: 1px solid;
+	height: 30px;
+	width: 180px;
+	display: inline-block;
+}
+div.cuatroder{
+	//border: 1px solid;
+	height: 30px;
+	width: 180px;
+	display: inline-block;
+}
+
+
+
+
+input#dato_input{
+	padding: 5px;
+	width: 90px;
+	//border: 2px solid;
+	
+	height: 50px;
+	
+	font-size: 35px;
+	
+}
+input#dato_inputdos{
+	padding: 5px;
+	width: 90px;
+	//border: 2px solid;
+	
+	height: 50px;
+	
+	font-size: 35px;
+	
+}
+
+div.caja1{
+	padding-top: 20px;
+	display: inline-block;
+	text-align: right;
+	vertical-align:top;
+	margin-top: 10px;
+	width: 400px;
+	font-size: 30px;
+	//border: 1px solid;
+	
+	
+}
+div.caja2{
+	margin-top: 20px;
+	display: inline-block;
+	vertical-align:top;
+	width: 100px;
+	
+}
+header#titulon{
+	font-size: 50px;
+	margin-bottom: 50px;
+}
+p#parrafo1{
+	padding: 10px;
+	font-size: 30px;
+	margin-left: 20px;
+
+}
+button.clasebotoncito{
+	padding: 5px;
+
+
+}
+div.aclaracion{
+	display: inline-block;
+	vertical-align:top;
+	margin-top: 10px;
+	margin-left: 35px;
+	font-size: 17px;
+	width: 436px;
+	
+	background: yellow;
+	//border: 2px solid;
+	text-align: justify;
+}
+
+div#Boton{
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 20px;
+	
+	height:70px;
+	text-align: center;
+
+}
+
+header{
+	text-align: center;
+	
+	height:50px;
+	font-size: 50px;
+}
+.claseboton{
+	margin-left: 20px;
+	font-size: 20px;
+	padding: 8px;
+	text-align: center;
+	//border: 2px solid;
+
+}
+
+
+.claseboton:active{
+	
+	background:red;
+	
+
+}
+div.dias{
+	background-color: #3cfc7f;
+	margin-top: 18px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border:2px solid;
+}
+div.diasemanal{
+	width: 200px;
+	text-align: right;
+	padding: 15px;
+	padding-right: 0px;
+	vertical-align: middle;
+	font-size: 27px;
+	padding-left: 20px;
+	display: inline-block;
+	//border: 1px solid;
+
+}
+input.pruebalargo{
+	text-align: center;
+	font-size: 20px;
+	width: 150px;
+}
+div.dost{
+	margin-top: 8px;
+}
+div.horariosemanal{
+	width: 490px;
+
+	vertical-align: top;
+	display: inline-block;
+	//border: 1px solid;
+
+}
+div.botonesfinales{
+	padding-top: 18px;
+	vertical-align: middle;
+	display: inline-block;
+
+	//border: 1px solid;
+
+}
+
+        	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </style>
+
+
+        <script type="text/javascript">
+
+
+
+        	function arduino(numclass){
+
+        			switch(numclass){
+
+        					case 1:
+        							var nocache = "&nocache=" + Math.random() * 1000000;
+					        	    var request = new XMLHttpRequest();
+					            	var vvv = "claseinvierno";
+					          	    request.open("GET", vvv + nocache, true);
+					            	request.send(null);
+
+        							break;
+
+        					case 2:
+        							var nocache = "&nocache=" + Math.random() * 1000000;
+					        	    var request = new XMLHttpRequest();
+					            	var vvv = "claseverano";
+					          	    request.open("GET", vvv + nocache, true);
+					            	request.send(null);
+        							break;
+
+        					case 3:
+        							var nocache = "&nocache=" + Math.random() * 1000000;
+					        	    var request = new XMLHttpRequest();
+					            	var vvv = "clasedefecto";
+					          	    request.open("GET", vvv + nocache, true);
+					            	request.send(null);
+        							break;
+
+        					default:break;
+
+
+
+        			}
+
+
+
+        			setTimeout('location.reload();', 2000);
+
+
+
+
+        	}
+
+
+
+
+
+
+
+
+
+
+
+        	
+        	var diauno    = 0; 
+        	var diados    = 0;
+        	var diatres   = 0;
+        	var diacuatro = 0;
+        	var diacinco  = 0;
+        	var diaseis   = 0;
+        	var diasiete  = 0;
+        	var estadocalen = 0;
+
+        	function rechulisimo(magia){
+
+        		switch(magia){
+
+        			case 1: 
+        					document.getElementById("conejo").style.display='none';
+        					document.getElementById("ocultoconejo").style.display='inline-block';
+        					//document.getElementById("general").style.height='630px'
+        					
+        					break;
+        			case 2:
+        					document.getElementById("ocultoconejo").style.display='none';
+        					document.getElementById("conejo").style.display='block';
+        					
+        					
+        					break;
+        			default: break;
+
+
+        		}
+
+
+
+
+
+        	}
+
+
+        	function desbloqueo(){
+
+
+        		document.getElementById("ocultoprincipal").style.display='none';
+        		document.getElementById("cargaprincipal").style.display='block';
+			    
+
+
+
+
+        	}
+        	function calendar(opcion){
+
+        		switch(opcion){
+
+        			case 1: 
+        					
+        					document.getElementById("Calendario").style.display='none';
+        					//document.getElementById("general").style.height='390px';
+        					document.getElementById("bactivar").style.backgroundColor='grey';
+        					document.getElementById("bdesactivar").style.backgroundColor='red';
+        					document.getElementById("bdesactivar").style.border='2px solid';
+        					document.getElementById("bactivar").style.border='2px solid';
+        					document.getElementById("bdesactivar").style.borderColor='#d81d00';
+        					estadocalen = 0;
+        					break;
+
+        			case 2: 
+        					document.getElementById("Calendario").style.display='block';
+        				//	document.getElementById("general").style.height='1280px';
+        					estadocalen = 1;
+        					document.getElementById("bactivar").style.backgroundColor='#04e50f';
+        					document.getElementById("bdesactivar").style.backgroundColor='grey';
+        					document.getElementById("bdesactivar").style.border='2px solid';
+        					document.getElementById("bactivar").style.border='2px solid';
+        					document.getElementById("bactivar").style.borderColor='green';
+        					break;
+
+        			default: break;
+
+
+
+
+
+
+        		}
+
+
+
+
+        	}
+        	
+
+
+
+
+
+
+
+        		//primero recibir valores de sd desde arduino
+        		function cargaSDarduino()
+        {
+            nocache = "&nocache=" + Math.random() * 1000000;
+            var request = new XMLHttpRequest();
+            request.onreadystatechange = function()
+            {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {
+                        if (this.responseXML != null) {
+
+
+                        	var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[0].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora1a').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[1].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora1b').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[2].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora1c').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[3].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora1d').value = ttt;
+
+							           		var nummm;	
+                            				nummm = this.responseXML.getElementsByTagName('analog')[4].childNodes[0].nodeValue;							            	
+							            	
+
+							           		diauno=nummm;
+							           		cambioColorConVar(1,diauno);
+
+
+
+
+
+
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[5].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora2a').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[6].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora2b').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[7].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora2c').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[8].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora2d').value = ttt;
+
+							           		var nummm;	
+                            				nummm = this.responseXML.getElementsByTagName('analog')[9].childNodes[0].nodeValue;							            	
+							            	
+
+							           		diados=nummm;
+							           		cambioColorConVar(2,diados);
+
+
+
+
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[10].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora3a').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[11].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora3b').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[12].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora3c').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[13].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora3d').value = ttt;
+
+							           		var nummm;	
+                            				nummm = this.responseXML.getElementsByTagName('analog')[14].childNodes[0].nodeValue;							            	
+							            	
+
+							           		diatres=nummm;
+							           		cambioColorConVar(3,diatres);
+
+
+
+
+
+
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[15].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora4a').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[16].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora4b').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[17].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora4c').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[18].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora4d').value = ttt;
+
+							           		var nummm;	
+                            				nummm = this.responseXML.getElementsByTagName('analog')[19].childNodes[0].nodeValue;							            	
+							            	
+
+							           		diacuatro=nummm;
+							           		cambioColorConVar(4,diacuatro);
+
+
+
+
+
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[20].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora5a').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[21].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora5b').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[22].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora5c').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[23].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora5d').value = ttt;
+
+							           		var nummm;	
+                            				nummm = this.responseXML.getElementsByTagName('analog')[24].childNodes[0].nodeValue;							            	
+							            	
+
+							           		diacinco=nummm;
+							           		cambioColorConVar(5,diacinco);
+
+
+
+
+
+
+
+
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[25].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora6a').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[26].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora6b').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[27].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora6c').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[28].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora6d').value = ttt;
+
+							           		var nummm;	
+                            				nummm = this.responseXML.getElementsByTagName('analog')[29].childNodes[0].nodeValue;							            	
+							            	
+
+							           		diaseis=nummm;
+							           		cambioColorConVar(6,diaseis);
+
+
+
+
+
+
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[30].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora7a').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[31].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora7b').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[32].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora7c').value = ttt;
+
+							           		var hhh = "hola";	
+                            				hhh = this.responseXML.getElementsByTagName('analog')[33].childNodes[0].nodeValue;							            	
+							            	var ttt = hhh[1] + hhh[2] + hhh[3] + hhh[4] + hhh[5];
+							           		document.getElementById('hora7d').value = ttt;
+
+							           		var nummm;	
+                            				nummm = this.responseXML.getElementsByTagName('analog')[34].childNodes[0].nodeValue;							            	
+							            	
+
+							           		diasiete=nummm;
+							           		
+							           		cambioColorConVar(7,diasiete);
+
+
+
+
+                            				var prueba=this.responseXML.getElementsByTagName('analog')[35].childNodes[0].nodeValue;
+                            				
+                            				var nn = prueba[1] + prueba[2];
+                            				var mmm= parseInt(nn,10);                           				
+                            			
+                            			                       				
+                            				document.getElementById('dato_input').value = mmm;
+
+
+
+                            				var pruebados=this.responseXML.getElementsByTagName('analog')[36].childNodes[0].nodeValue;
+                            				
+                            				estadocalen = pruebados;
+
+
+                            				
+                            				var pruebatres=this.responseXML.getElementsByTagName('analog')[37].childNodes[0].nodeValue;
+                            				
+                            				var nn2 = pruebatres[1] + pruebatres[2];
+                            				var mmmt= parseInt(nn2,10);                           				
+                            			
+                            			                       				
+                            				document.getElementById('dato_inputdos').value = mmmt;
+
+
+                            				
+                            				setTimeout('desbloqueo()', 1000);
+                            				if (estadocalen==1) {
+                            					calendar(2);
+                            					//boton verde
+                            				}else if(estadocalen ==0){
+
+                            					calendar(1);
+                            				
+                            				//boton rojo
+                            				}
+                            
+
+
+
+
+
+
+
+                        }
+                    }
+                }
+            }
+         // setTimeout('desbloqueo()', 1000);
+
+            request.open("GET", "calendarioplease" + nocache, true);
+            request.send(null);
+            
+            
+        }
+        	
+
+        	function cambioColorConVar(boton,numero){
+				
+				switch(boton){
+					case 1: diauno = numero;
+								if(numero==1){
+
+									document.getElementById('dia1on').style.backgroundColor='#04ef28';
+									document.getElementById("luni").checked=true;
+									document.getElementById('dia1off').style.backgroundColor='#3cfc7f';
+								
+								}else{
+									document.getElementById('dia1on').style.backgroundColor='#3cfc7f';
+									document.getElementById("lund").checked=true;
+									document.getElementById('dia1off').style.backgroundColor='#f72222';
+								}
+
+					break;
+					case 2: diados = numero;
+								if(numero==1){
+
+									document.getElementById('dia2on').style.backgroundColor='#04ef28';
+									document.getElementById("mari").checked=true;
+									document.getElementById('dia2off').style.backgroundColor='#3cfc7f';
+								
+								}else{
+									document.getElementById('dia2on').style.backgroundColor='#3cfc7f';
+									document.getElementById("mard").checked=true;
+									document.getElementById('dia2off').style.backgroundColor='#f72222';
+								}
+
+					break;
+					case 3: diatres = numero;
+								if(numero==1){
+
+									document.getElementById('dia3on').style.backgroundColor='#04ef28';
+									document.getElementById("mieri").checked=true;
+									document.getElementById('dia3off').style.backgroundColor='#3cfc7f';
+								
+								}else{
+									document.getElementById('dia3on').style.backgroundColor='#3cfc7f';
+									document.getElementById("mierd").checked=true;
+									document.getElementById('dia3off').style.backgroundColor='#f72222';
+								}
+
+					break;
+					case 4: diacuatro = numero;
+								if(numero==1){
+
+									document.getElementById('dia4on').style.backgroundColor='#04ef28';
+									document.getElementById("juevi").checked=true;
+									document.getElementById('dia4off').style.backgroundColor='#3cfc7f';
+								
+								}else{
+									document.getElementById('dia4on').style.backgroundColor='#3cfc7f';
+									document.getElementById("juevd").checked=true;
+									document.getElementById('dia4off').style.backgroundColor='#f72222';
+								}
+
+					break;
+					case 5: diacinco = numero;
+								if(numero==1){
+
+									document.getElementById('dia5on').style.backgroundColor='#04ef28';
+									document.getElementById("vieri").checked=true;
+									document.getElementById('dia5off').style.backgroundColor='#3cfc7f';
+								
+								}else{
+									document.getElementById('dia5on').style.backgroundColor='#3cfc7f';
+									document.getElementById("vierd").checked=true;
+									document.getElementById('dia5off').style.backgroundColor='#f72222';
+								}
+
+					break;
+					case 6: diaseis = numero;
+								if(numero==1){
+
+									document.getElementById('dia6on').style.backgroundColor='#04ef28';
+									document.getElementById("sabadi").checked=true;
+									document.getElementById('dia6off').style.backgroundColor='#3cfc7f';
+								
+								}else{
+									document.getElementById('dia6on').style.backgroundColor='#3cfc7f';
+									document.getElementById("sabadd").checked=true;
+									document.getElementById('dia6off').style.backgroundColor='#f72222';
+								}
+
+					break;
+					case 7: diasiete = numero;
+								if(numero==1){
+
+									document.getElementById('dia7on').style.backgroundColor='#04ef28';
+									document.getElementById("domini").checked=true;
+									document.getElementById('dia7off').style.backgroundColor='#3cfc7f';
+								
+								}else{
+									document.getElementById('dia7on').style.backgroundColor='#3cfc7f';
+									document.getElementById("domind").checked=true;
+									document.getElementById('dia7off').style.backgroundColor='#f72222';
+								}
+
+					break;
+					default: break;
+
+				}
+			}
+			var h1a, h1b, h1c, h1d,estadouno = "hola";
+			function envioDeValores(){
+
+				//activar funcion rechulisima, oculta todo y dice actualizando espere...
+				rechulisimo(1);
+
+				h1a ='a' + document.getElementById('hora1a').value;
+
+				h1b ='b' +  document.getElementById('hora1b').value;
+				h1c ='c' +  document.getElementById('hora1c').value;
+				h1d ='d' +  document.getElementById('hora1d').value;
+
+				estadouno ='e'+ diauno +'k';
+				var vvv = "?valor01="
+				vvv = vvv.concat(h1a,h1b, h1c,h1d,estadouno);
+
+
+			nocache = "&nocache=" + Math.random() * 1000000;
+            var request = new XMLHttpRequest();
+            
+            request.open("GET", vvv + nocache, true);
+            request.send(null);
+
+            //llamar a funcion con retardo
+            setTimeout('pp2()', 200);
+			}
+
+
+			function pp2(){
+
+
+
+            	h1a ='a' +  document.getElementById('hora2a').value;
+				h1b ='b' +  document.getElementById('hora2b').value;
+				h1c ='c' +  document.getElementById('hora2c').value;
+				h1d ='d' +  document.getElementById('hora2d').value;
+				estadouno ='e'+ diados +'k';
+				var vvv = "?valor02="
+				vvv = vvv.concat(h1a,h1b, h1c,h1d,estadouno);
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            
+          	    request.open("GET", vvv + nocache, true);
+            	request.send(null);
+            	//llamar
+            	setTimeout('pp3()', 200);
+            }
+
+            function pp3(){
+            
+            	h1a ='a' +  document.getElementById('hora3a').value;
+				h1b ='b' +  document.getElementById('hora3b').value;
+				h1c ='c' +  document.getElementById('hora3c').value;
+				h1d ='d' +  document.getElementById('hora3d').value;
+				estadouno ='e'+ diatres +'k';
+				var vvv = "?valor03="
+				vvv = vvv.concat(h1a,h1b, h1c,h1d,estadouno);
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            
+          	    request.open("GET", vvv + nocache, true);
+            	request.send(null);
+            	//llamar a otra funcion
+            	setTimeout('pp4()', 200);
+            }
+
+            function pp4(){
+
+            	h1a ='a' +  document.getElementById('hora4a').value;
+				h1b ='b' +  document.getElementById('hora4b').value;
+				h1c ='c' +  document.getElementById('hora4c').value;
+				h1d ='d' +  document.getElementById('hora4d').value;
+				estadouno ='e'+ diacuatro +'k';
+				var vvv = "?valor04="
+				vvv = vvv.concat(h1a,h1b, h1c,h1d,estadouno);
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            
+          	    request.open("GET", vvv + nocache, true);
+            	request.send(null);
+            	//llamar a otra funcion
+            	setTimeout('pp5()', 200);
+            }
+            	function pp5(){
+            	h1a ='a' +  document.getElementById('hora5a').value;
+				h1b ='b' +  document.getElementById('hora5b').value;
+				h1c ='c' +  document.getElementById('hora5c').value;
+				h1d ='d' +  document.getElementById('hora5d').value;
+				estadouno ='e'+ diacinco +'k';
+				var vvv = "?valor05="
+				vvv = vvv.concat(h1a,h1b, h1c,h1d,estadouno);
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            
+          	    request.open("GET", vvv + nocache, true);
+            	request.send(null);
+            	//lllamar
+            	setTimeout('pp6()', 200);
+            }
+            	function pp6(){
+
+            	h1a ='a' +  document.getElementById('hora6a').value;
+				h1b ='b' +  document.getElementById('hora6b').value;
+				h1c ='c' +  document.getElementById('hora6c').value;
+				h1d ='d' +  document.getElementById('hora6d').value;
+				estadouno ='e'+ diaseis +'k';
+				var vvv = "?valor06="
+				vvv = vvv.concat(h1a,h1b, h1c,h1d,estadouno);
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            
+          	    request.open("GET", vvv + nocache, true);
+            	request.send(null);
+            	//llamar
+            	setTimeout('pp7()', 100);
+            }
+            function pp7(){
+            	h1a ='a' +  document.getElementById('hora7a').value;
+				h1b ='b' +  document.getElementById('hora7b').value;
+				h1c ='c' +  document.getElementById('hora7c').value;
+				h1d ='d' +  document.getElementById('hora7d').value;
+				estadouno ='e'+ diasiete +'k';
+				var vvv = "?valor07="
+				vvv = vvv.concat(h1a,h1b, h1c,h1d,estadouno);
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            
+          	    request.open("GET", vvv + nocache, true);
+            	request.send(null);
+            	//llamar
+            	setTimeout('pp8()', 100);
+            }
+            function pp8(){
+
+
+            	h1a = '=' + document.getElementById('dato_input').value;
+				
+				var vvv = "?valor"
+				vvv = vvv.concat(h1a);
+
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            
+          	    request.open("GET", vvv + nocache, true);
+            	request.send(null);
+
+            	setTimeout('ppa9()', 100);
+
+
+
+
+
+				//var h1a = Object.prototype.toString(document.getElementById('hora1a').value); 
+				//alert(h1a);
+				//document.getElementById('hora1b').value='11:11';
+
+				
+			}
+			function ppa9(){
+
+
+
+				h1a = '=w' + document.getElementById('dato_inputdos').value;
+				
+				var vvv = "?valor"
+				vvv = vvv.concat(h1a);
+
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            
+          	    request.open("GET", vvv + nocache, true);
+            	request.send(null);
+
+
+
+
+
+				setTimeout('pp9()', 100);
+
+			}
+
+			function pp9(){
+
+
+
+
+				var piopio = 'x' + estadocalen + 'f';
+				
+				var vvv = "?valor"
+				vvv = vvv.concat(piopio);
+
+				nocache = "&nocache=" + Math.random() * 1000000;
+        	    var request = new XMLHttpRequest();
+            
+          	    request.open("GET", vvv + nocache, true);
+            	request.send(null);
+
+            	setTimeout('rechulisimo(2)', 7000);
+
+
+
+
+
+			}
+			//aqia va otra funcion q envia estado calendario. en esa funcion se llama a descherrulizar
+
+        </script>
+		
+    </head>
+    <body onload="cargaSDarduino()"  background="#ffc9c9" bgcolor="#ffc9c9">
+    	<center>
+    	
+    	<div id="general">
+			<header id="titulon">Configuraciones de Automatizacion</header>
+			
+			<div id="ocultoprincipal">
+				<p>Obteniendo Datos</p>
+				<br>
+				<p>Espere...</p>
+			</div>
+			
+
+			<center>
+			<div id="ocultoconejo">
+				<p>Actualizando Base de Datos</p>
+				<br>
+				<p>Espere...</p>
+			</div>
+			</center>
+
+
+			<div id="conejo">
+			<div id="cargaprincipal">
+			
+			<center>
+			<div class="Temp">
+	        	<div class="caja1">Temperatura de Activacion:</div>
+	        	<div class="caja2">
+	        		<input id="dato_input" name="timi" type="number"  value="35" min="10" max="90">
+	        	</div>
+	        	<div class="aclaracion">La temperatura se expresa en Grados centigrados. Al momento que el sensor exterior alcance o supera esa temperatura se procedera a activar la bomba. SIEMPRE QUE LA CONFIGURACION ESTE ACTIVADA EN AUTOMATICO</div>
+	        </div>
+	        </center>
+
+
+	        <center>
+			<div class="Temp">
+	        	<div class="caja1">Temperatura de Control:</div>
+	        	<div class="caja2">
+	        		<input id="dato_inputdos" name="timoti" type="number"  value="35" min="10" max="90">
+	        	</div>
+	        	<div class="aclaracion">La temperatura que se expresa, refleja la temperatura deseada del agua de la pileta. Si la temperatura actual de la pileta se encuentra en ese rango, la bomba no se accionara. (excepto accionamiento manual).</div>
+	        </div>
+	        </center>
+
+
+
+
+
+
+
+
+			<p id="parrafo1">Uso de Calendario:
+
+				<button class="clasebotoncito" id="bactivar" onclick="calendar(2)"> Activar </button>
+				<button class="clasebotoncito" id="bdesactivar" onclick="calendar(1)">Desabilitar</button>
+
+
+			</p>
+
+
+
+
+			<center>
+	        <div id="Calendario">
+
+	        	
+	        		
+	        		
+	        		
+
+	        	
+	        	
+	        	<div class="dias" id="primera">
+	        		<div id="izquierdaam">Desde &#160 &#160 &#160 &#160-&#160 &#160 &#160 &#160 Hasta </div>
+	        		
+	        		
+	        	
+	        	</div>
+	        	<div class="dias" id="dialunes">
+	        		<div class="diasemanal">
+	        		"LUNES" &#160 &#160 &#160 &#160 &#160
+	        		</div>
+	        		  
+	        		<div class="horariosemanal">
+	        				<div class="unot">
+	        					<input class="pruebalargo" type="time" id="hora1a" value="--:--" max="12:59" min="00:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora1b" value="--:--" max="12:59" min="00:00">hs (AM)
+			        		</div> 
+			        		<div class="dost">
+			        			<input class="pruebalargo" type="time" id="hora1c" value="--:--" max="23:59" min="13:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora1d" value="--:--" max="23:59" min="13:00">hs (PM)
+			        		</div> 
+
+	        		</div>
+	        		
+	        		 <div class="botonesfinales">
+	        		 	<span class="botestados" id="dia1on"><input type="radio" id="luni" name="lun" value="habilitar" onclick="cambioColorConVar(1,1)"> HABILITAR</span>
+	        			<span class="botestados" id="dia1off" style="background-color: #f72222;"><input type="radio" id="lund"name="lun" value="desabilitar" onclick="cambioColorConVar(1,0)" checked> DESABILITAR</span>
+
+
+	        		 </div>
+					
+	        		
+
+	        				
+	        			
+	        		
+	        	</div>
+	        	<div class="dias" id="diamartes">
+	        		<div class="diasemanal">
+	        		"MARTES"&#160 &#160 &#160 &#160 
+	        		</div>
+	        		<div class="horariosemanal">
+	        				<div class="unot">
+	        					<input class="pruebalargo" type="time" id="hora2a" value="--:--" max="12:59" min="00:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora2b" value="--:--" max="12:59" min="00:00">hs (AM)
+			        		</div> 
+			        		<div class="dost">
+			        			<input class="pruebalargo" type="time" id="hora2c" value="--:--" max="23:59" min="13:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora2d" value="--:--" max="23:59" min="13:00">hs (PM)
+			        		</div> 
+
+	        		</div>
+	        		 
+
+						
+	        				<div class="botonesfinales">
+	        				<span class="botestados" id="dia2on"><input type="radio" id="mari"name="mart" value="habilitar" onclick="cambioColorConVar(2,1)"> HABILITAR</span><span class="botestados" id="dia2off" style="background-color: #f72222;"><input type="radio" id="mard"name="mart" value="desabilitar" onclick="cambioColorConVar(2,0)" checked> DESABILITAR</span>
+	        			</div>
+	        	</div>
+	        	<div class="dias" id="diamiercoles">
+	        		<div class="diasemanal">
+	        		"MIERCOLES"
+	        		</div>
+	        		<div class="horariosemanal">
+	        				<div class="unot">
+	        					<input class="pruebalargo" type="time" id="hora3a" value="--:--" max="12:59" min="00:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora3b" value="--:--" max="12:59" min="00:00">hs (AM)
+			        		</div> 
+			        		<div class="dost">
+			        			<input class="pruebalargo" type="time" id="hora3c" value="--:--" max="23:59" min="13:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora3d" value="--:--" max="23:59" min="13:00">hs (PM)
+			        		</div> 
+
+	        		</div>
+	        		 
+
+	  					<div class="botonesfinales">
+	        				<span class="botestados" id="dia3on"><input type="radio" id="mieri"name="mierc" value="habilitar" onclick="cambioColorConVar(3,1)"> HABILITAR</span><span class="botestados" id="dia3off" style="background-color: #f72222;"><input type="radio" id="mierd" name="mierc" value="desabilitar" onclick="cambioColorConVar(3,0)" checked> DESABILITAR</span>
+	        			</div>
+	        	</div>
+	        	<div class="dias" id="diajueves">
+	        		<div class="diasemanal">
+	        		"JUEVES" &#160 &#160 &#160 &#160
+	        		</div> 
+	        		<div class="horariosemanal">
+	        				<div class="unot">
+	        					<input class="pruebalargo" type="time" id="hora4a" value="--:--" max="12:59" min="00:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora4b" value="--:--" max="12:59" min="00:00">hs (AM)
+			        		</div> 
+			        		<div class="dost">
+			        			<input class="pruebalargo" type="time" id="hora4c" value="--:--" max="23:59" min="13:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora4d" value="--:--" max="23:59" min="13:00">hs (PM)
+			        		</div> 
+
+	        		</div>
+
+						<div class="botonesfinales">
+	        				<span class="botestados" id="dia4on"><input type="radio" id="juevi"name="juev" value="habilitar" onclick="cambioColorConVar(4,1)"> HABILITAR</span><span class="botestados" id="dia4off" style="background-color: #f72222;"><input type="radio" id="juevd"name="juev" value="desabilitar" onclick="cambioColorConVar(4,0)" checked> DESABILITAR</span>
+	        			</div>
+	        	</div>
+	        	<div class="dias" id="diaviernes">
+	        		<div class="diasemanal">
+	        		"VIERNES"&#160 &#160 &#160 
+	        		</div>
+	        		<div class="horariosemanal">
+	        				<div class="unot">
+	        					<input class="pruebalargo" type="time" id="hora5a" value="--:--" max="12:59" min="00:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora5b" value="--:--" max="12:59" min="00:00">hs (AM)
+			        		</div> 
+			        		<div class="dost">
+			        			<input class="pruebalargo" type="time" id="hora5c" value="--:--" max="23:59" min="13:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora5d" value="--:--" max="23:59" min="13:00">hs (PM)
+			        		</div> 
+
+	        		</div>
+	        		 
+
+	        			<div class="botonesfinales">
+	        				<span class="botestados" id="dia5on"><input type="radio" id="vieri"name="viern" value="habilitar" onclick="cambioColorConVar(5,1)"> HABILITAR</span><span class="botestados" id="dia5off" style="background-color: #f72222;"><input type="radio" id="vierd"name="viern" value="desabilitar" onclick="cambioColorConVar(5,0)" checked> DESABILITAR</span>
+	        			</div>
+	        	</div>
+	        	<div class="dias" id="diasabado">
+	        		<div class="diasemanal">
+	        		"SABADO"&#160 &#160 &#160 
+	        		</div>
+	        		<div class="horariosemanal">
+	        				<div class="unot">
+	        					<input class="pruebalargo" type="time" id="hora6a" value="--:--" max="12:59" min="00:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora6b" value="--:--" max="12:59" min="00:00">hs (AM)
+			        		</div> 
+			        		<div class="dost">
+			        			<input class="pruebalargo" type="time" id="hora6c" value="--:--" max="23:59" min="13:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora6d" value="--:--" max="23:59" min="13:00">hs (PM)
+			        		</div> 
+
+	        		</div>
+	        		 
+	        			<div class="botonesfinales">
+	  					
+	        				<span class="botestados" id="dia6on"><input type="radio" id="sabadi"name="sabad" value="habilitar" onclick="cambioColorConVar(6,1)"> HABILITAR</span><span class="botestados" id="dia6off" style="background-color: #f72222;"><input type="radio" id="sabadd"name="sabad" value="desabilitar" onclick="cambioColorConVar(6,0)" checked> DESABILITAR</span>
+	        			</div>
+	        	</div>
+	        	<div class="dias" id="diadomingo">
+	        		<div class="diasemanal">
+	        		"DOMINGO"&#160  
+	        		</div>
+	        		<div class="horariosemanal">
+	        				<div class="unot">
+	        					<input class="pruebalargo" type="time" id="hora7a" value="--:--" max="12:59" min="00:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora7b" value="--:--" max="12:59" min="00:00">hs (AM)
+			        		</div>
+			        		<div class="dost">
+			        			<input class="pruebalargo" type="time" id="hora7c" value="--:--" max="23:59" min="13:00">hs
+			        		
+			        			<input class="pruebalargo" type="time" id="hora7d" value="--:--" max="23:59" min="13:00">hs (PM)
+			        		</div> 
+
+	        		</div>
+	        		<div class="botonesfinales">
+
+	        				<span class="botestados" id="dia7on"><input type="radio" id="domini"name="domin" value="habilitar" onclick="cambioColorConVar(7,1)"> HABILITAR</span><span class="botestados" id="dia7off" style="background-color: #f72222;"><input type="radio" id="domind"name="domin" value="desabilitar" onclick="cambioColorConVar(7,0)" checked> DESABILITAR</span>
+	        			</div>
+
+	        		
+
+	        		
+
+	        		
+	        		
+	        		 
+
+	        		
+	        	</div>
+
+	        	
+	        	
+
+	        </div>
+	        
+	        
+	        
+	        
+	        <div id="Boton">
+	        	
+	        	<button class="claseboton" onclick="envioDeValores()">Guardar y Establecer los cambios</button>
+	        	
+	        	
+	        
+	        </div>
+	    </center>
+	        <a href="index.htm" >Volver</a>
+	        <!--<a href="#titulon" onclick="arduino(1)">C1</a>
+	        <a href="#titulon" onclick="arduino(2)">C2</a>
+	        <a href="#titulon" onclick="arduino(3)">C3</a>-->
+		</div>
+
+		</div>
+		</div>
+
+	</center>
+	</body>
+</html>
+   
