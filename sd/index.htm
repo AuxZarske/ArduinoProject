@@ -268,24 +268,20 @@ e[d]=g}}e=new Gauge(e);k.getAttribute("data-value")&&e.setRawValue(parseFloat(k.
 			                //agregar otro nodo 5, el cual reciba en estado de la bomba.
 
 
-
-			                switch(bombom){
-				        		case 0:
-				        				
-
+			                if(bombom == 0){
+			                
 							            document.getElementById("botonInformeBomba1").style.display='none';
 							            document.getElementById("botonInformeBomba2").style.display='inline-block';
-				        				
-				        		case 1: 
+							            
+							  }else if(bombom == 1){       
 				        				document.getElementById("botonInformeBomba1").style.display='inline-block';
 							            document.getElementById("botonInformeBomba2").style.display='none';
+							         } else {
+
+							         	alert(bombom);
+							         }  
 				        				
-				        				break;
-				        		default: break;
-
-
-
-				        	}
+				        				
 			                //en base al estado 1 o 0, llama a funcion e indica que hacer.
 
 
