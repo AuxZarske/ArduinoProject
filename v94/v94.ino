@@ -167,7 +167,7 @@ int estado6;
 int estado7;
 int estado9;
 
-long horaCompleta = 0;
+int horaCompleta = 600;
 
 int temperaturagg;
 int temperados;
@@ -4000,7 +4000,7 @@ if(otrosDiez){ //18 segundos false 4 segundos true.
   //si es temprano actualizar var completa
   if(now.hour() < 6){
     
-    horaCompleta = 0;
+    horaCompleta = 500;
     
     }
   
@@ -5012,24 +5012,31 @@ boolean diaBonito(){
 
 
 
-
+/*
+Verdadero si hay un minuto de diferencia entre el cambio de estado
+de la bomba (delay (solo en automatico) para volver a prender la bomba)
+*/
 boolean hayLimite(){
   //tomar hora actual
-  DateTime now = rtc.now();
-  long horaAhora = (now.hour())*10000;
-  horaAhora = horaAhora + (now.minute()*100);
-  horaAhora = horaAhora + (now.second());
-
+  DateTime hhh = rtc.now();
+  int horaAhora = (hhh.hour())*100 + (hhh.minute());
+  
             
-  long diferencia = horaAhora - horaCompleta;
-
-  if(diferencia > 60){
+  
+  
+  Serial.println(horaAhora);
+  Serial.println(horaCompleta);
+  int diferencia = horaAhora - horaCompleta;
+  Serial.println(diferencia);
+  if(diferencia > 1){
         horaCompleta = horaAhora;
         //poner hora actual como variable
+        //Serial.println("no hay limite");
         return true;
+        
     }
   
-
+  //Serial.println("hay limite");
   return false;
   }
   
