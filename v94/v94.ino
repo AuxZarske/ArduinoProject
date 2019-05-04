@@ -87,8 +87,8 @@ IPAddress dnsserver (192, 168, 1, 1);
 IPAddress gateway (192, 168, 1, 1);
 IPAddress subnet (255, 255, 255, 177);
 //IPAddress ip(192, 168, 1, 177); // IP address, may need to change depending on network
-IPAddress ip(169, 254, 165, 158);//169.254.165.158
-//IPAddress ip(192, 168, 1, 150);//ip gabriel
+//IPAddress ip(169, 254, 165, 158);//169.254.165.158
+IPAddress ip(192, 168, 1, 84);//ip gabriel cual era XD?????
 EthernetServer server(70);
 File webFile;               // the web page file on the SD card
 char HTTP_req[REQ_BUF_SZ]; // buffered HTTP request stored as null terminated string
@@ -902,14 +902,14 @@ void XML_response(EthernetClient cl)
 
     
     // read analog pin A2
-    analog_val = ((analogRead(2) + 1) / 11);
-    //analog_val = sensor1;
+    //analog_val = ((analogRead(2) + 1) / 11);
+    analog_val = sensor1;
     cl.println("<analog>");
     cl.println(analog_val);
     cl.println("</analog>");
     
-    analog_val = ((analogRead(3) + 1) / 11);
-    //analog_val = sensordos;
+    //analog_val = ((analogRead(3) + 1) / 11);
+    analog_val = sensordos;
     cl.println("<analog>");
     cl.println(analog_val);
     cl.println("</analog>");
