@@ -87,8 +87,8 @@ IPAddress dnsserver (192, 168, 1, 1);
 IPAddress gateway (192, 168, 1, 1);
 IPAddress subnet (255, 255, 255, 177);
 //IPAddress ip(192, 168, 1, 177); // IP address, may need to change depending on network
-//IPAddress ip(169, 254, 165, 158);//169.254.165.158
-IPAddress ip(192, 168, 1, 150);//ip gabriel
+IPAddress ip(169, 254, 165, 158);//169.254.165.158
+//IPAddress ip(192, 168, 1, 150);//ip gabriel
 EthernetServer server(70);
 File webFile;               // the web page file on the SD card
 char HTTP_req[REQ_BUF_SZ]; // buffered HTTP request stored as null terminated string
@@ -902,24 +902,24 @@ void XML_response(EthernetClient cl)
 
     
     // read analog pin A2
-   // analog_val = ((analogRead(2) + 1) / 11);
-    analog_val = sensor1;
+    analog_val = ((analogRead(2) + 1) / 11);
+    //analog_val = sensor1;
     cl.println("<analog>");
     cl.println(analog_val);
     cl.println("</analog>");
     
-   // analog_val = ((analogRead(3) + 1) / 11);
-    analog_val = sensordos;
+    analog_val = ((analogRead(3) + 1) / 11);
+    //analog_val = sensordos;
     cl.println("<analog>");
     cl.println(analog_val);
     cl.println("</analog>");
     
 
    //int chk = DHT11.read(DHT11PIN);
-   // analog_val = DHT11.temperature;        //eeeeeeeeeeeeeh como que tendria que leer de diferente forma, va nose, ya estoy mucho tiempo sin dormir
+   // analog_val = DHT11.temperature;        
     analog_val = sensor3;
     Serial.println(analog_val);
-    cl.println("<analog>");              //buscar funcion de lectura para temperatura sin la humedad (que nadie la llamo); 
+    cl.println("<analog>");             
     cl.println(analog_val);
     cl.println("</analog>");
 
@@ -939,6 +939,7 @@ void XML_response(EthernetClient cl)
 
           //bombaestado
           analog_val =  bombombom;
+          
           cl.println("<analog>");              
           cl.println(analog_val);
           cl.println("</analog>");
@@ -4016,7 +4017,7 @@ if(otrosDiez){ //18 segundos false 4 segundos true.
         tempoBomba=0;
   if(bomba){
     digitalWrite(bombaestado,HIGH);//si o si
-    int bombombom = 1;
+    bombombom = 1;
     //activar bomba
     }else if((automatico) and (diaBonito())){
 
@@ -4032,7 +4033,7 @@ if(otrosDiez){ //18 segundos false 4 segundos true.
 
                           if(hayLimite()){
                             digitalWrite(bombaestado,HIGH); //pty
-                            int bombombom = 1;
+                            bombombom = 1;
                             }
                           
 
@@ -4040,7 +4041,7 @@ if(otrosDiez){ //18 segundos false 4 segundos true.
                   }else{
                           if(hayLimite()){
                             digitalWrite(bombaestado,LOW); //pty
-                            int bombombom = 0;
+                            bombombom = 0;
                           }
                           
                     }
@@ -4048,7 +4049,7 @@ if(otrosDiez){ //18 segundos false 4 segundos true.
           }else{
                   if(hayLimite()){
                     digitalWrite(bombaestado,LOW);
-                    int bombombom = 0;
+                    bombombom = 0;
                     }
                   
             }
@@ -4064,13 +4065,13 @@ if(otrosDiez){ //18 segundos false 4 segundos true.
                     Serial.println("segunda pregunta entro");
                     if(hayLimite()){
                         digitalWrite(bombaestado,HIGH); //pty
-                        int bombombom = 1;
+                        bombombom = 1;
                       }
                     
                 }else{
                     if(hayLimite()){
                         digitalWrite(bombaestado,LOW);//pty
-                        int bombombom = 0;
+                        bombombom = 0;
                       }
                     
                   
@@ -4080,7 +4081,7 @@ if(otrosDiez){ //18 segundos false 4 segundos true.
           }else{
                     if(hayLimite()){
                       digitalWrite(bombaestado,LOW);  //pty
-                      int bombombom = 0;
+                      bombombom = 0;
                       }
                     
             
@@ -4091,7 +4092,7 @@ if(otrosDiez){ //18 segundos false 4 segundos true.
       }else{ //si automatico y manual desactivados, apagar bomba
         
         digitalWrite(bombaestado,LOW); //si o si
-        int bombombom = 0;
+        bombombom = 0;
         
         
         
