@@ -53,7 +53,26 @@
 				padding: 5px;
 				padding-left: 10px;
 				padding-right: 10px;
+				display: none;
 
+
+
+            }
+
+            button#botonInformeBomba3{
+
+            	border-radius: 10px 10px 10px 10px;
+				-moz-border-radius: 10px 10px 10px 10px;
+				-webkit-border-radius: 10px 10px 10px 10px;
+				border: 5px solid #2900c1;
+				background-color: #6495ef;
+				font-size: 17px;
+				padding: 5px;
+				padding-left: 10px;
+				padding-right: 10px;
+				display: inline-block;
+
+            	 
 
 
             }
@@ -272,10 +291,12 @@ e[d]=g}}e=new Gauge(e);k.getAttribute("data-value")&&e.setRawValue(parseFloat(k.
 			                
 							            document.getElementById("botonInformeBomba1").style.display='none';
 							            document.getElementById("botonInformeBomba2").style.display='inline-block';
+							            document.getElementById("botonInformeBomba3").style.display='none';
 							            
 							  }else if(bombom == 1){       
 				        				document.getElementById("botonInformeBomba1").style.display='inline-block';
 							            document.getElementById("botonInformeBomba2").style.display='none';
+							            document.getElementById("botonInformeBomba3").style.display='none';
 							         } else {
 
 							         	alert(bombom);
@@ -309,7 +330,8 @@ e[d]=g}}e=new Gauge(e);k.getAttribute("data-value")&&e.setRawValue(parseFloat(k.
 
                             			colorete(1,estadobomba,4);			                            
 			                            document.getElementById("botonesuno").style.display='inline-block';
-			                            document.getElementById("ocultouno").style.display='none';			                           
+			                            document.getElementById("ocultouno").style.display='none';	
+
 			                            
 			                            colorete(2,estadoautomatico,4);			                           
 			                            document.getElementById("botonesdos").style.display='inline-block';
@@ -538,6 +560,7 @@ e[d]=g}}e=new Gauge(e);k.getAttribute("data-value")&&e.setRawValue(parseFloat(k.
 
             <button id="botonInformeBomba1">La bomba esta: ON</button>
             <button id="botonInformeBomba2"> La bomba esta: OFF </button>
+            <button id="botonInformeBomba3"> Recopilando Datos: ??????</button>
 
             <p id="final1linkmega"><a href="page3.htm"><FONT SIZE = "+3"> <b>Utilidades Extras</b> </FONT></a></p>  
 		</div>
